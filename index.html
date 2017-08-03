@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
+<link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
 <head>
-  <script type="text/javascript">
-// <![CDATA[
-var colour="#FFFF00"; // in addition to "random" can be set to any valid colour eg "#f0f" or "red"
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script type="text/javascript" src="mentalhealth.js"></script>
+
+var colour="#FFFF00";
 var sparkles=50;
 
-/****************************
-*  Tinkerbell Magic Sparkle *
-*(c)2005-13 mf2fm web-design*
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
 var x=ox=400;
 var y=oy=300;
 var swide=800;
@@ -207,7 +204,7 @@ function newColour() {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+body,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {width: 120px;background: #222;}
@@ -226,9 +223,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#purpose" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
+    <p>PURPOSE</p>
+  </a>
+  <a href="#tips" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-bell w3-xxlarge"></i> 
+    <p> TIPS </p>
   </a>
   <a href="#background" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-eye w3-xxlarge"></i>
@@ -238,13 +239,15 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>HOTLINES</p>
   </a>
+
+
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
     <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="Mind over Matter" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="Mind over Matter" class="w3-bar-item w3-button" style="width:25% !important">PURPOSE</a>
     <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
     <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
@@ -258,23 +261,66 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p><b>because your mind DOES matter.<b></p>
     <img src="mentalhealth.png" width="300" height="300">
   </header>
+</div>
 
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="purpose">
     <h2 class="w3-text-light-grey">Purpose</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>
 We believe mental health is something that needs to be addressed, especially due to the reasoning that this subject has been dismissed for so long. So, Let's Address it. As teens of today’s society, we have seen the neglection of mental illness on our peers, friends, family, and many others. The stress of an overwhelming workload, the constant pressure of conforming to social standards, and much more, has taken a toll on many. We created this website is to reassure those that they are not alone and they have resources and options availible. We want to be one of the options.
 
     </p>
-    <h3 class="w3-padding-16 w3-text-light-grey">...</h3>
+    <h3 class="w3-padding-16 w3-text-light-grey"></h3>
    <p>
    </p>
+
+<style>
+.mySlides {display:none;}
+h1{
+  font-family: "Yellowtail";
+  font-size: 100;
+
+}
+</style>
+<body>
+
+<h2 class="w3-center"></h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="inspiring.png" style="width:100%">
+  <img class="mySlides" src="brainlift.png" style="width:100%">
+  <img class="mySlides" src="mentalawareness.png" style="width:100%">
+  <img class="mySlides" src="mentalfirstaid.png" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+
+
+
+<!-- tips section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="tips">
 
     <!-- Grid for pricing tables -->
     <h3 class="w3-padding-16 w3-text-light-grey">Tips</h3>
     <hr style="width:200px" class="w3-opacity">
-      <img src="brain.png" style="width:40%">
+
+
     <p> <ul>
   <li>Meditate</li>
   <li>Breathe Deeply</li>
@@ -332,20 +378,23 @@ We believe mental health is something that needs to be addressed, especially due
     <!-- Testimonials -->
     <h3 class="w3-padding-24 w3-text-light-grey">Creators</h3>
     <hr style="width:200px" class="w3-opacity">
-    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Jennifer Le</span> ... </p>
+    <img src="selfie.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:100px">
+    <p><span class="w3-large w3-margin-right">Jennifer Le</span> 17 years old. Currently an upcoming senior at Arroyo High School in San Lorenzo. By creating this website, I aspire to break the stigma of mental illnesses and create awareness of the importance of mental health.  </p>
     <p>...</p><br>
 
-    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Sarah Padilla</span>...</p>
+    <img src="sarah.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:100px">
+    <p><span class="w3-large w3-margin-right">Sarah Padilla</span>17 years old, currently a rising senior at San Leandro High School, In Girls Who Code Summer Immersion Program, motivated to bring awareness to teens who are dismissed the help to treat their mental illnesses or issues.
+</p>
     <p>...</p>
 
-    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Fathia Jirde</span> ...</p>
+    <img src="fathia.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:90px">
+    <p><span class="w3-large w3-margin-right">Fathia Jirde</span> 17 yrs. old ; senior in highschool; part of girls who code; motivated to make this website b/c of the total disregard people treat this serious subject with.  I'm from Fresno
+</p>
     <p>...</p>
 
-    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Sandy Chung</span> ...</p>
+    <img src="sandychung.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:170px">
+    <p><span class="w3-large w3-margin-right">Sandy Chung</span> 16 years old. Currently attending KIPP King Collegiate High School, in San Lorenzo. My motivation of making this website is to help others, especially teens, who are challenged by their mental health.
+</p>
     <p>...</p>
   <!-- End About Section -->
   </div>
@@ -354,7 +403,7 @@ We believe mental health is something that needs to be addressed, especially due
   <div class="w3-padding-64 w3-content" id="background">
     <h2 class="w3-text-light-grey">Background</h2>
     <hr style="width:200px" class="w3-opacity">
-
+<p>A mental illness is a disease that causes mild to serve disturbances in thought and/or behavior, resulting in an ability to cope with life's ordinary demands and routines, and are sometimes hard to detect in an individual. Mental health is key to relationships and emotional well-being of the individual. But mental illness is nothing to be ashamed of! Mental illness does not discriminate; it can affect anyone regardless of your age, gender, income,social status, race/ethnicity, religion/spirituality, sexual orientation,background or other aspect of cultural identity.</p>
     <!-- Grid for photos -->
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half">
@@ -397,36 +446,22 @@ We believe mental health is something that needs to be addressed, especially due
     <p> <img src="letstalk.png" width="400" height="200">
 
     </p>
+
 <!--
-    <! <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button> -->
-        <!-- <div class="wrapper"></div>
 
-<input class="message" type="text" placeholder="Enter message and press enter"/>
+</div>
 
-<div class="initModal">
-	<h3>What's your name?</h3>
-	<input type="text" class="username" placeholder="Enter your name and press enter"/>
-</div> -->
-
-      </p> -->
+      </p>
     </form>
   <!-- End Contact Section -->
   </div>
 
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <p class="w3-medium">HTML & CSS <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    <!-- <p class="w3-medium">HTML & CSS <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   <!-- End footer -->
   </footer>
-
+<p> CITATION: </p>
 <!-- END PAGE CONTENT -->
 </div>
 
