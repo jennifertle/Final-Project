@@ -5,6 +5,73 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <script type="text/javascript" src="mentalhealth.js"></script>
+  <script type="text/html" src="quiz.html"></script>
+  <script type="text/javascript" src="quiz.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#eat").hide();
+  $(".eathide").click(function(){
+        $("#eat").hide();
+    });
+    $(".eatshow").click(function(){
+        $("#eat").show();
+    });
+});
+$(document).ready(function(){
+  $("#delusion").hide();
+  $(".delusionhide").click(function(){
+        $("#delusion").hide();
+    });
+    $(".delusionshow").click(function(){
+        $("#delusion").show();
+    });
+});
+$(document).ready(function(){
+  $("#repetitive").hide();
+  $(".repetitivehide").click(function(){
+    $("#repetitive").hide();
+      });
+      $(".repetitiveshow").click(function(){
+        $("#repetitive").show();
+      });
+});
+$(document).ready(function(){
+ $("#changing").hide();
+ $(".changinghide").click(function(){
+      $("#changing").hide();
+  });
+  $(".changingshow").click(function(){
+      $("#changing").show();
+  });
+});
+$(document).ready(function(){
+$("#stressfull").hide();
+$(".stressfullhide").click(function(){
+     $("#stressfull").hide();
+ });
+ $(".stressfulshow").click(function(){
+     $("#stressfull").show();
+ });
+});
+$(document).ready(function(){
+$("#trauma").hide();
+$(".traumahide").click(function(){
+     $("#trauma").hide();
+ });
+ $(".traumashow").click(function(){
+     $("#trauma").show();
+ });
+});
+$(document).ready(function(){
+$("#sadness").hide();
+$(".sadhide").click(function(){
+     $("#sadness").hide();
+ });
+ $(".sadshow").click(function(){
+     $("#sadness").show();
+ });
+});
 
 var colour="#FFFF00";
 var sparkles=50;
@@ -228,7 +295,7 @@ body,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p>PURPOSE</p>
   </a>
   <a href="#tips" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-bell w3-xxlarge"></i> 
+    <i class="fa fa-bell w3-xxlarge"></i>
     <p> TIPS </p>
   </a>
   <a href="#background" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
@@ -238,6 +305,10 @@ body,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>HOTLINES</p>
+  </a>
+  <a href="quiz.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-pencil w3-xxlarge"></i>
+    <p>QUIZ</p>
   </a>
 
 
@@ -268,10 +339,10 @@ body,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <h2 class="w3-text-light-grey">Purpose</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>
-We believe mental health is something that needs to be addressed, especially due to the reasoning that this subject has been dismissed for so long. So, Let's Address it. As teens of today’s society, we have seen the neglection of mental illness on our peers, friends, family, and many others. The stress of an overwhelming workload, the constant pressure of conforming to social standards, and much more, has taken a toll on many. We created this website is to reassure those that they are not alone and they have resources and options availible. We want to be one of the options.
 
+We believe mental health is something that needs to be addressed, especially due to the reasoning that this subject has been dismissed for so long. So, Let's Address it. As teens of today's society, we have seen the neglection of mental illness on our peers, friends, family, and many others. The stress of an overwhelming workload, the constant pressure of conforming to social standards, and much more, has taken a toll on many. We created this website is to reassure those that they are not alone and they have resources and options availible. We want to be one of the options.
     </p>
-    <h3 class="w3-padding-16 w3-text-light-grey"></h3>
+    <h3 class="w3-padding-16 w3-text-white"></h3>
    <p>
    </p>
 
@@ -280,7 +351,16 @@ We believe mental health is something that needs to be addressed, especially due
 h1{
   font-family: "Yellowtail";
   font-size: 100;
+}
+.tips{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
 
+button {
+  background-color: black;
+  color: white;
 }
 </style>
 <body>
@@ -289,9 +369,9 @@ h1{
 
 <div class="w3-content w3-section" style="max-width:500px">
   <img class="mySlides" src="inspiring.png" style="width:100%">
-  <img class="mySlides" src="brainlift.png" style="width:100%">
+  <!-- <img class="mySlides" src="brainlift.png" style="width:100%">
   <img class="mySlides" src="mentalawareness.png" style="width:100%">
-  <img class="mySlides" src="mentalfirstaid.png" style="width:100%">
+  <img class="mySlides" src="mentalfirstaid.png" style="width:100%"> -->
 </div>
 
 <script>
@@ -319,23 +399,95 @@ function carousel() {
     <!-- Grid for pricing tables -->
     <h3 class="w3-padding-16 w3-text-light-grey">Tips</h3>
     <hr style="width:200px" class="w3-opacity">
+      <p> <ul>
+
+        <li class = "tips ">Eating Disorder</li>
+ <div id = "eat">
+    <p> make a list of positive and negative qualities.</p>
+                 <p>value your imperfections.</p>
+                 <p>reach out to others and share your feelings.</p>
+                 <p>practice mindfulness.</p>
+                 <p>listen to music.</p>
+ </div>
+      <button class="eathide">hide</button>
+      <button class="eatshow">show</button>
+ <li class = "tips "> Schizophrenia</li>
+  <div id="delusion">
+     <p> keep in mind that no one is to blame. </p>
+                 <p>get enough sleep and rest.</p>
+                 <p>focus on what is meaningful.</p>
+                 <p>forgive others and yourself for mistakes.</p>
+                 <p>do not shout at others, dealing with schizophrenia.</p>
+   </div>
+     <button class="delusionhide">hide</button>
+     <button class="delusionshow">show</button>
+
+ <li class = "tips "> Obsessive-Compulsive Disorder </li>
+  <div id="repetitive">
+    <p> surround yourself around supportive people.</p>
+                     <p>seek help from people with similar situations.</p>
+                     <p>keep a journal.</p>
+                     <p>take a moment to be proud of your own efforts.</p>
+                     <p>recognize your success.</p>
+                     <p>do not forget you have OCD.</p>
+
+   </div>
+     <button class="repetitivehide">hide</button>
+     <button class="repetitiveshow">show</button>
+
+     <li class = "tips "> Bipolar </li>
+      <div id="changing">
+        <p> develop a routine.</p>
+                           <p>aviod caffeine,alcohol,and drugs.</p>
+                           <p>take more breaks to aviod stress.</p>
+                           <p>be patient, don't expect  total cure.</p>
+                           <p>establish relationship with others.</p>
+                           <p>excersize frequently.</p>
+                           <p>intake omega 3.</p>
+       </div>
+         <button class="changinghide">hide</button>
+         <button class="changingshow">show</button>
+
+         <li class = "tips "> General Anxiety </li>
+          <div id="stressfull">
+            <p> take deep breaths.</p>
+                                <p>take a well balanced meals.</p>
+                                <p>count to ten slowly.</p>
+                                <p>get enough sleep.</p>
+                                <p>accept that you can not control everything.</p>
+                                <p>welcome humor.</p>
+                                <p>talk with others.</p>
+                                <p>practice mindfulness as well as yoga.</p>
+
+           </div>
+             <button class="stressfullhide">hide</button>
+             <button class="stressfulshow">show</button>
+
+             <li class = "tips "> Post Tramatic Stress Disorder </li>
+              <div id="trauma">
+                <p> try talking through your tramatic experience with someone. </p>
+                                   <p>slowly transition to a daily routine (p.s take it easy)</p>
+                                   <p>spend time in nature.</p>
+                                   <p>listen to quiet music.</p>
+                                   <p>muscle relaxation exercises.</p>
 
 
-    <p> <ul>
-  <li>Meditate</li>
-  <li>Breathe Deeply</li>
-  <li>Be present</li>
-  <li>Reach Out</li>
-  <li>Set Realistic Goals</li>
-  <li>Remember to Get a Lot of Rest</li>
-  <li>Spend time with friends and/or family</li>
-  <li>Tune Into Your Body</li>
-  <li>Laugh Out Loud</li>
-  <li>Express your Love to Others</li>
-  <li>Express Your Feelings</li>
-  <li>Learn something new</li>
-  <li>Practice Forgiveness</li>
+               </div>
+                 <button class="traumahide">hide</button>
+                 <button class="traumashow">show</button>
 
+
+                 <li class = "tips "> Depression </li>
+                  <div id="sadness">
+                    <p> spend 15 minutes or more outdoors.  </p>
+                                     <p>try something new while being patient.</p>
+                                     <p>start a daily relaxation routine.</p>
+                                     <p>spend time with people you love.</p>
+                                     <p>set goals.</p>
+                   </div>
+                     <button class="sadhide">hide</button>
+                     <button class="sadshow">show</button>
+</div>
 </ul>
 </p>
     <div class="w3-row-padding" style="margin:0 -16px">
@@ -444,24 +596,38 @@ function carousel() {
       <!-- <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p> -->
     </div><br>
     <p> <img src="letstalk.png" width="400" height="200">
+      <div class="initModal">
+        <h3>"What's your name?"</h3>
+        <input type="text" class="username" placeholder="Enter your name and press enter"/>
+      </div>
+      <div class="wrapper"></div>
+
+      <input class="message" type="text" placeholder="Enter message and press enter"/>
+      <button class="button1">clear</button>
 
     </p>
-
+<!-- <a href ="quiz.html">QUIZ</a> -->
 <!--
 
 </div>
 
       </p>
     </form>
-  <!-- End Contact Section -->
+  <!- End Contact Section -->
   </div>
+
+<!-- Quiz -->
+<div class="w3-padding-64 w3-content w3-text-grey" id="quiz">
+  <h2 class="w3-text-light-grey">Mental Health Quiz</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <a href="quiz.html">Mental Health Quiz</a>
 
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
     <!-- <p class="w3-medium">HTML & CSS <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   <!-- End footer -->
   </footer>
-<p> CITATION: </p>
+<p> CITATION: W3 Schools, Google Images, </p>
 <!-- END PAGE CONTENT -->
 </div>
 
